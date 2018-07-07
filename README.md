@@ -20,3 +20,24 @@ diamonds %>% group_by(color) %>% summarize(cuts=paste(unique(cut), collapse=",")
 # Select the Addin and do the manual customisation using ggtheme dropdown
 ```
 
+--------------------------------------------------------------------
+the `cut()` function in R helps to discretize a continous variable
+
+```{r}
+ggplot(data = ncbirths, 
+       aes(x = weeeks, y = weight)) + 
+  geom_boxplot()
+```
+
+`vs`
+
+```{r}
+ggplot(data = ncbirths, 
+       aes(x = cut(weeks, breaks = 6), y = weight)) + 
+  geom_boxplot()
+```
+-------------------------------------------------------------
+
+`ggplot2` provides several different mechanisms for viewing transformed relationships. The `coord_trans()` function transforms the coordinates of the plot. Alternatively, the `scale_x_log10()` and `scale_y_log10()` functions perform a `base-10` log transformation of each axis. 
+
+
