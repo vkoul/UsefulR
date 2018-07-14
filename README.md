@@ -40,4 +40,22 @@ ggplot(data = ncbirths,
 
 `ggplot2` provides several different mechanisms for viewing transformed relationships. The `coord_trans()` function transforms the coordinates of the plot. Alternatively, the `scale_x_log10()` and `scale_y_log10()` functions perform a `base-10` log transformation of each axis. 
 
+-------------------------------------------------------------
+
+`skimr` package in r is a useful way of doing the EDA in R. 
+
+Use the `skim` function from `skimr`. 
+`skim(data)`
+
+This can also be used post grouping a variable
+
+```{r}
+data %>%
+ group_by(v1) %>%
+  skim()
+```  
+  
+
+
+
 
